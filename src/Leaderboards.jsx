@@ -13,13 +13,13 @@ const Leaderboards = () => {
             to="/leaderboards/pokemon"
             className="w-2/3 sm:w-1/3 p-4 bg-slate-300 text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg"
           >
-            Pokemon
+            151 original Pokemon
           </Link>
           <a
             href="#"
             className="w-2/3 sm:w-1/3 p-4 bg-slate-300  text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg"
           >
-            Game 2
+            Countries of the world
           </a>
           <a
             href="#"

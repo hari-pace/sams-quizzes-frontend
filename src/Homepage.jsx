@@ -4,11 +4,7 @@ import { Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import PokemonHomepage from "./components/pokemoncomponents/PokemonHomepage";
 
-const Homepage = ({
-  setCurrentUserPokemon,
-  tempUserPokemon,
-  setTempUserPokemon,
-}) => {
+const Homepage = ({ setCurrentUser, tempUser, setTempUser }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -21,11 +17,11 @@ const Homepage = ({
 
   const handleOnKeyPress = (e) => {
     console.log(e.target.value);
-    setTempUserPokemon(e.target.value);
+    setTempUser(e.target.value);
   };
   const storeCurrentUsername = () => {
-    console.log(tempUserPokemon);
-    setCurrentUserPokemon(tempUserPokemon);
+    console.log(tempUser);
+    setCurrentUser(tempUser);
     closeModal();
   };
 
@@ -53,12 +49,12 @@ const Homepage = ({
         >
           151 original Pokemon
         </Link>
-        <a
-          href="#"
-          className="w-2/3 sm:w-1/3 p-4 bg-slate-300  text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg"
+        <Link
+          to="/countries"
+          className="w-2/3 sm:w-1/3 p-4 bg-slate-300 text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg"
         >
-          Link 2
-        </a>
+          Countries of the world
+        </Link>
         <a
           href="#"
           className="w-2/3 sm:w-1/3 p-4 bg-slate-300  text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg"

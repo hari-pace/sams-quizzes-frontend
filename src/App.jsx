@@ -4,13 +4,15 @@ import Leaderboards from "./Leaderboards";
 import PokemonHomepage from "./components/pokemoncomponents/PokemonHomepage";
 import PokemonLeaderboard from "./components/pokemoncomponents/PokemonLeaderboard";
 import PokemonQuiz from "./components/pokemoncomponents/PokemonQuiz";
+import CountriesHomepage from "./components/countriescomponents/CountriesHomepage";
+import CountriesQuiz from "./components/countriescomponents/CountriesQuiz";
 import Navbar from "./Navbar";
 import Homepage from "./Homepage";
 import "./App.css";
 
 function App() {
-  const [currentUserPokemon, setCurrentUserPokemon] = useState();
-  const [tempUserPokemon, setTempUserPokemon] = useState();
+  const [currentUser, setCurrentUser] = useState();
+  const [tempUser, setTempUser] = useState();
   return (
     <>
       <Navbar />
@@ -19,19 +21,29 @@ function App() {
           path="/"
           element={
             <Homepage
-              setCurrentUserPokemon={setCurrentUserPokemon}
-              setTempUserPokemon={setTempUserPokemon}
-              tempUserPokemon={tempUserPokemon}
+              setCurrentUser={setCurrentUser}
+              setTempUser={setTempUser}
+              tempUser={tempUser}
             />
           }
         />
         <Route path="/pokemon" element={<PokemonHomepage />} />
+        <Route path="/countries" element={<CountriesHomepage />} />
         <Route
           path="/pokemon/play"
           element={
             <PokemonQuiz
-              setCurrentUserPokemon={setCurrentUserPokemon}
-              currentUserPokemon={currentUserPokemon}
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
+            />
+          }
+        />
+        <Route
+          path="/countries/play"
+          element={
+            <CountriesQuiz
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
             />
           }
         />
