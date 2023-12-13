@@ -7,7 +7,12 @@ export default {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
     },
-    extend: {},
+    extend: {
+      backgroundImage: (theme) => ({
+        "button-hover-pokemon": "url(./src/assets/pikachu.jpg)",
+        "button-hover-countries": "url(./src/assets/world.png)",
+      }),
+    },
   },
   plugins: [],
   darkMode: "class",

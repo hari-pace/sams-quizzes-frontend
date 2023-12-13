@@ -6,6 +6,7 @@ import PokemonLeaderboard from "./components/pokemoncomponents/PokemonLeaderboar
 import PokemonQuiz from "./components/pokemoncomponents/PokemonQuiz";
 import CountriesHomepage from "./components/countriescomponents/CountriesHomepage";
 import CountriesQuiz from "./components/countriescomponents/CountriesQuiz";
+import CountriesLeaderboard from "./components/countriescomponents/CountriesLeaderboard";
 import Navbar from "./Navbar";
 import Homepage from "./Homepage";
 import "./App.css";
@@ -49,6 +50,10 @@ function App() {
         />
         <Route path="/leaderboards" element={<Leaderboards />} />
         <Route path="/leaderboards/pokemon" element={<PokemonLeaderboard />} />
+        <Route
+          path="/leaderboards/countries"
+          element={<CountriesLeaderboard />}
+        />
       </Routes>
     </>
   );

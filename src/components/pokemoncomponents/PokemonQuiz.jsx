@@ -3,7 +3,7 @@ import Pokeball from "../../assets/pokeball.png";
 import Pokeballs from "../../assets/pokeballs.jpg";
 import { Link } from "react-router-dom";
 
-const Quiz = ({ currentUserPokemon }) => {
+const Quiz = ({ currentUser }) => {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [userGuess, setUserGuess] = useState("");
@@ -64,7 +64,7 @@ const Quiz = ({ currentUserPokemon }) => {
       {
         method: "POST",
         body: JSON.stringify({
-          username: currentUserPokemon?.length > 0 ? currentUserPokemon : "Sam",
+          username: currentUser?.length > 0 ? currentUser : "Sam",
           score: points,
           wrongGuesses: wrongGuesses,
         }),

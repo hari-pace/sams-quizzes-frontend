@@ -20,7 +20,7 @@ const CountriesHomepage = () => {
           </div>
           <div className="bg-slate-100 max-w-3xl mx-auto pb-12 pt-8 border-2 rounded-xl">
             <div className="text-xl sm:text-3xl text-center p-8 mb-4 h-16 flex justify-center items-center mx-auto ">
-              Flags but with a colourful twist - good luck!
+              50 flags but with a colourful twist - good luck!
             </div>
             <div className="text-md sm:text-md text-center p-8 mb-4 h-16 flex flex-col justify-center items-center mx-auto ">
               <p>⏭️ = no idea, skip to next</p>

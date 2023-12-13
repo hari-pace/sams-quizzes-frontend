@@ -35,11 +35,13 @@ const CountriesQuiz = ({ currentUser }) => {
 
   useEffect(() => {
     if (countries.length > 0) {
-      // Shuffle and set initial state when pokemons data is available
+      // Shuffle and set initial state when data is available
       const shuffledCountries = [...countries].sort(() => Math.random() - 0.5);
-      console.log(shuffledCountries);
+
+      const slicedCountries = shuffledCountries.slice(0, 50);
+      console.log(slicedCountries);
       setCountriesWithBlur(
-        shuffledCountries.map((country) => ({ ...country, blurred: true }))
+        slicedCountries.map((country) => ({ ...country, blurred: true }))
       );
     }
   }, [countries]);
@@ -57,28 +59,28 @@ const CountriesQuiz = ({ currentUser }) => {
     }
   }, [hasGuessedLastCountry]);
 
-  //   const addUser = async () => {
-  //     console.log("updateUser triggered");
-  //     const response = await fetch(
-  //       "https://sams-quizzes.onrender.com/leaderboard/pokemon/pokemon",
-  //       {
-  //         method: "POST",
-  //         body: JSON.stringify({
-  //           username: currentUserPokemon?.length > 0 ? currentUserPokemon : "Sam",
-  //           score: points,
-  //           wrongGuesses: wrongGuesses,
-  //         }),
-  //         headers: { "Content-type": "application/json; charset=UTF-8" },
-  //       }
-  //     );
-  //     const winData = await response.json();
-  //     console.log(winData);
-  //   };
+  const addUser = async () => {
+    console.log("addUser triggered");
+    const response = await fetch(
+      "https://sams-quizzes.onrender.com/leaderboard/countries/countries",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          username: currentUser?.length > 0 ? currentUser : "Sam",
+          score: points,
+          wrongGuesses: wrongGuesses,
+        }),
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+      }
+    );
+    const winData = await response.json();
+    console.log(winData);
+  };
 
   const currentCountry = countriesWithBlur[currentCountryIndex];
 
   const handleGuessSubmit = () => {
-    // Check if the user's guess matches the current Pokemon's name
+    // Check if the user's guess matches the current country's name
     if (currentCountry.name.common.toLowerCase() === userGuess.toLowerCase()) {
       // If correct, unblur the image, show success message, and add a point
       alert("Correct guess! You earned a point.");
@@ -93,11 +95,11 @@ const CountriesQuiz = ({ currentUser }) => {
         )
       );
 
-      if (currentCountryIndex === 249) {
+      if (currentCountryIndex === 49) {
         setHasGuessedLastCountry(true);
       }
 
-      // Move to the next Pokemon after a delay
+      // Move to the next country after a delay
       const timeout = setTimeout(() => {
         setCurrentCountryIndex((prevIndex) => prevIndex + 1);
         setUserGuess("");
@@ -113,7 +115,7 @@ const CountriesQuiz = ({ currentUser }) => {
   };
 
   const handleSkip = () => {
-    // Move to the next Pokemon
+    // Move to the next country
 
     setSkips(skips + 1);
     setCountriesWithBlur((prevCountries) =>
@@ -121,7 +123,7 @@ const CountriesQuiz = ({ currentUser }) => {
         index === currentCountryIndex ? { ...country, blurred: false } : country
       )
     );
-    if (currentCountryIndex === 249) {
+    if (currentCountryIndex === 49) {
       console.log("skipped the last country");
       setHasGuessedLastCountry(true);
     }
@@ -133,7 +135,7 @@ const CountriesQuiz = ({ currentUser }) => {
   };
 
   const handleHintClick = () => {
-    // Show the first letter of the Pokemon's name as a hint
+    // Show the first letter of the country's name as a hint
     alert(
       `Hint: The first letter of the country's name is "${currentCountry.name.common.charAt(
         0
@@ -242,9 +244,9 @@ const CountriesQuiz = ({ currentUser }) => {
               className="bg-slate-100 max-w-3xl mx-auto flex mt-32  border-2 rounded-xl"
             >
               <div className="text-3xl sm:text-3xl text-center p-16 flex justify-center items-center mx-auto ">
-                You guessed {points} / 151 correctly!
+                You guessed {points} / 50 correctly!
               </div>
-              <Link to="/leaderboards/pokemon">
+              <Link to="/leaderboards/countries">
                 <div className="text-md sm:text-md text-center p-4 flex justify-center items-center mx-auto ">
                   See where I place on the leaderboard!{" "}
                 </div>
