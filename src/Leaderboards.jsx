@@ -28,18 +28,6 @@ const Leaderboards = () => {
             >
               Countries of the world
             </Link>
-            <a
-              href="#"
-              className="flex items-center justify-center w-2/3 h-16 sm:h-20 sm:w-1/3 p-4 bg-slate-300 text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg  hover:scale-105 font-bold hover:text-slate-100"
-            >
-              Game 3
-            </a>
-            <a
-              href="#"
-              className="flex items-center justify-center w-2/3 h-16 sm:h-20 sm:w-1/3 p-4 bg-slate-300 text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg  hover:scale-105 font-bold hover:text-slate-100"
-            >
-              Game 4
-            </a>
           </div>
         </div>
       </body>
