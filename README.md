@@ -1,5 +1,5 @@
 # Sams Quizzes
-
+<br />
 <h3>A game made for my brother who is too good at traditional quizzes - frontend created using React.js and TailwindCSS.</h3>
 <br />
 
