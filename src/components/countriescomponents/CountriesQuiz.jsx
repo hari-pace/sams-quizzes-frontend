@@ -159,6 +159,7 @@ const CountriesQuiz = ({ currentUser }) => {
         className="absolute top-0 left-0 w-full h-full"
         style={{
           backgroundImage: `url(${World})`,
+          height: "800px",
         }}
       >
         {loading ? (

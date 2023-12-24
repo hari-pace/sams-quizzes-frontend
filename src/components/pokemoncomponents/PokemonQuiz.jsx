@@ -161,7 +161,7 @@ const Quiz = ({ currentUser }) => {
         className="absolute top-0 left-0 w-full h-full"
         style={{
           backgroundImage: `url(${Pokeballs})`,
-          height: "1000px",
+          height: "800px",
         }}
       >
         {loading ? (
@@ -176,7 +176,7 @@ const Quiz = ({ currentUser }) => {
               style={{
                 display: !showScorePokemon ? "block" : "none",
               }}
-              className="mx-auto w-full max-w-6xl pt-4 sm:pt-12"
+              className="mx-auto w-full max-w-6xl pt-4 sm:pt-4"
             >
               {pokemonsWithBlur?.map((pokemon, index) => (
                 <div

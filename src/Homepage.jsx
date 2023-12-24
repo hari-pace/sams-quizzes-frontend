@@ -52,19 +52,19 @@ const Homepage = ({ setCurrentUser, tempUser, setTempUser }) => {
         <div className="flex flex-col items-center ">
           <Link
             to="/pokemon"
-            className="flex items-center justify-center w-2/3 h-16 sm:h-20 sm:w-1/3 p-4 bg-slate-300 text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg hover:bg-button-hover-pokemon hover:scale-105 font-bold hover:text-slate-100"
+            className="flex items-center justify-center w-2/3 h-16 sm:h-20 sm:w-1/3 p-4 bg-slate-300 text-center mb-4  hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg hover:bg-button-hover-pokemon hover:scale-105 font-bold hover:text-slate-100"
           >
             151 original Pokemon
           </Link>
           <Link
             to="/countries"
-            className="flex items-center justify-center w-2/3 h-16 sm:h-20 sm:w-1/3 p-4 bg-slate-300 text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg hover:bg-button-hover-countries hover:scale-105 font-bold hover:text-slate-100"
+            className="flex items-center justify-center w-2/3 h-16 sm:h-20 sm:w-1/3 p-4 bg-slate-300 text-center mb-4  hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg hover:bg-button-hover-countries hover:scale-105 font-bold hover:text-slate-100"
           >
             Countries of the world
           </Link>
           <a
             href="#"
-            className="flex items-center justify-center w-2/3 h-16 sm:h-20 sm:w-1/3 p-4 bg-slate-300  text-center mb-4 hover:w-1/3 hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg hover:text-slate-100 font-bold"
+            className="flex items-center justify-center w-2/3 h-16 sm:h-20 sm:w-1/3 p-4 bg-slate-300  text-center mb-4  hover:bg-slate-400 duration-300 hover:transition-all hover:ease-in border-4 rounded-lg hover:text-slate-100 font-bold"
           >
             More games coming 2024...
           </a>
@@ -74,28 +74,30 @@ const Homepage = ({ setCurrentUser, tempUser, setTempUser }) => {
           <div className="fixed inset-0 z-50 overflow-auto bg-gray-500 bg-opacity-75">
             <div className="flex items-center justify-center h-screen">
               {/* Modal Content */}
-              <div className="bg-white p-8 rounded shadow-lg">
+              <div className="bg-slate-100 p-12 rounded shadow-lg">
                 <div className="text-center">Please enter your username</div>
-                <button
-                  onClick={closeModal}
-                  className="mt-4  hover:bg-gray-200 text-white font-bold py-2 px-4 rounded"
-                >
-                  🔙
-                </button>
-                <input
-                  className="w-3/5 mx-2 pl-4 pt-2 pb-2 shadow-lg rounded-xl border-2"
-                  type="text"
-                  id="username"
-                  placeholder="e.g. Samander"
-                  onChange={handleOnKeyPress}
-                />
-                {/* Close Button */}
-                <button
-                  onClick={storeCurrentUsername}
-                  className="mt-4  hover:bg-gray-200 text-white font-bold py-2 px-4 rounded"
-                >
-                  ✅
-                </button>
+                <div className="text-center">
+                  <button
+                    onClick={closeModal}
+                    className="mt-4  hover:bg-gray-200 text-white font-bold py-2 px-3 rounded"
+                  >
+                    🔙
+                  </button>
+                  <input
+                    className="w-3/5 mx-1 pl-4 pt-2 pb-2 shadow-lg rounded-xl border-2"
+                    type="text"
+                    id="username"
+                    placeholder="e.g. Samander"
+                    onChange={handleOnKeyPress}
+                  />
+                  {/* Close Button */}
+                  <button
+                    onClick={storeCurrentUsername}
+                    className="mt-4  hover:bg-gray-200 text-white font-bold py-2 px-3 rounded"
+                  >
+                    ✅
+                  </button>
+                </div>
               </div>
             </div>
           </div>
