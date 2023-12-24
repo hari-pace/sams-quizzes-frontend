@@ -1,9 +1,9 @@
-# React + Vite
+# Sams Quizzes
+<br />
+<h3>A game made for my brother who is too good at traditional quizzes - frontend created using React.js and TailwindCSS.</h3>
+<br />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>The app can be found at the following link: https://sams-quizzes.netlify.app/</h3>
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# sams-quizzes-frontend
+
